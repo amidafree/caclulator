@@ -13,12 +13,11 @@ body {
   justify-content: center;
 }
 
-.calculator {
-}
-
 .display {
   width: 283px;
   padding-top: 24px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   border: none;
   margin-bottom: 1px;
   mix-blend-mode: multiply;
