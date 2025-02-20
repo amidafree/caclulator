@@ -40,13 +40,13 @@ equalButton.addEventListener('click', () => {
     const answer = new Function(`return ${sanitizedFormula}`)(); 
 
     if (!isFinite(answer)) {
-      throw new Error('計算エラー');
+      throw new Error('Error');
     }
 
     displayAnswer(answer);
     formula = String(answer);
   } catch {
-    displayAnswer('エラー');
+    displayAnswer('Error');
     formula = '';
   }
 });
