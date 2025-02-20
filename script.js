@@ -5,25 +5,66 @@ const acButton = document.querySelector('[data-ac]');
 const delButton = document.querySelector('[data-del]');
 const equalButton = document.querySelector('[data-equal]');
 
+let formula = '';
+
 numberButton.forEach((button) => {
   button.addEventListener('click', () => {
-    const number = button.innerHTML;
-    display.innerHTML += number;
+    formula += button.innerHTML;
+    displayFormula();
   });
 });
 
 operatorButton.forEach((button) => {
   button.addEventListener('click', () => {
-    const operation = button.innerHTML;
+    const lastChar = formula.slice(-1);
+
+    if ('+-*/'.includes(lastChar)) {
+      return;
+    }
+
+    if (button.innerHTML === '×') {
+      formula += '*';
+    } else if (button.innerHTML === '÷') {
+      formula += '/';
+    } else {
+      formula += button.innerHTML;
+    }
+
+    displayFormula();
   });
 });
 
+equalButton.addEventListener('click', () => {
+  try {
+    const sanitizedFormula = formula.replace(/[^0-9+\-*/.]/g, ''); 
+    const answer = new Function(`return ${sanitizedFormula}`)(); 
+
+    if (!isFinite(answer)) {
+      throw new Error('計算エラー');
+    }
+
+    displayAnswer(answer);
+    formula = String(answer);
+  } catch {
+    displayAnswer('エラー');
+    formula = '';
+  }
+});
+
 acButton.addEventListener('click', () => {
-  display.innerHTML = 0;
+  formula = '';
+  displayFormula();
 });
 
 delButton.addEventListener('click', () => {
-  if(display.innerHTML.length > 1) {
-    display.innerHTML = display.innerHTML.slice(0, -1);
-  }
+  formula = formula.slice(0, -1);
+  displayFormula();
 });
+
+function displayFormula() {
+  display.innerHTML = formula.replace(/\*/g, '×').replace(/\//g, '÷') || '0';
+}
+
+function displayAnswer(answer) {
+  display.innerHTML = answer;
+}
