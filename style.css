@@ -1,82 +1,257 @@
-/* Variables */
 :root {
-  --primary-color: rgb(0, 180, 180);  
-  --button-hover: white;
-  --button-active: hsl(0, 0%, 80%);
-  --font-size-normal: 26px;
-  --font-size-large: 40px;
-  --button-size: 70px;
+  --primary-color: #000000;
+  --secondary-color: #1d1d1f;
+  --accent-color: #0066cc;
+  --accent-gradient: white;
+  --text-color: #1d1d1f;
+  --light-gray: #f5f5f7;
+  --border-color: #d2d2d7;
 }
 
-/* Base Styles */
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.47059; 
+  color: var(--text-color);
+  background: linear-gradient(225deg, rgb(216, 116, 142) 0%, rgb(216, 116, 142) 29%,rgb(180, 100, 149) 29%, rgb(180, 100, 149) 42%,rgb(144, 85, 156) 42%, rgb(144, 85, 156) 44%,rgb(107, 69, 162) 44%, rgb(107, 69, 162) 60%,rgb(71, 54, 169) 60%, rgb(71, 54, 169) 67%,rgb(35, 38, 176) 67%, rgb(35, 38, 176) 100%);
+            
+  -webkit-font-smoothing: antialiased; 
+  padding-top: 100px;  
+  
+  height: 2000px;
+  
+  
 }
 
-body {
-  height: 100vh;
-  background: linear-gradient(to right bottom, rgb(99, 232, 255), rgb(255, 84, 232)); 
+
+
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+      
+
+.skills-container {
   display: flex;
+  justify-content: center;
+  gap: 70px;
+  height: auto;
+  margin-bottom: 50px;
+  color: white;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+
+
+.progress-skills-container {
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
+  width: 500px;
+  min-height: 500px;
+  height: auto;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);  
+  backdrop-filter: blur(10px) saturate(150%); 
+}
+
+.future-skills-container {
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
+  width: 500px;
+  min-height: 500px;
+  height: auto;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);  
+  backdrop-filter: blur(10px) saturate(150%); 
+}
+
+.skill-title {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.discription {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: white;
+  padding: 50px;
+  padding-top: 30px;
+  word-break: break-all;
+  padding-bottom: 20px;
+}
+
+.discription p {
+  margin-bottom: 16px;
+}
+
+.discription .discription-p {
+  margin-bottom: 11px;
+}
+
+.skill-icon {
+  width: 70px;
+}
+
+.html-icon {
+  width: 70px;
+} 
+
+.css-icon {
+  width: 68px;
+}
+
+.javascript-icon {
+  width: 66px;
+}
+
+.react-icon {
+  width: 70px;
+}
+
+.tailwindcss-icon {
+  width: 70px;
+}
+
+.typescript-icon {
+  width: 66px;
+}
+
+.next-js-icon {
+  width: 66px;
+}
+
+footer {
+  
+  height: 50px;
+  width: 100%;
+  background-color: var(--light-gray);
+  padding: 2rem;
+  text-align: center;
+  text-justify: center;
   align-items: center;
   justify-content: center;
+  display: flex;
+  font-size: 0.8rem;
+  color: white; 
+  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.01); 
+  backdrop-filter: blur(10px) saturate(150%);
 }
 
-/* Display Section */
-.display {
-  width: calc(var(--button-size) * 4 + 3px); /* 70px * 4 + gap */
-  padding: 24px 4px 0 0;
-  border: none;
-  margin-bottom: 1px;
-  background-color: var(--primary-color);
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(20px) saturate(150%);
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.01); 
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.logo {
+  position: relative;
+  z-index: 2; 
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: white;
   color: white;
-  font-size: var(--font-size-large);
-  font-weight: bold;
-  text-align: right;
-  mix-blend-mode: multiply;
-  overflow-wrap: break-word;
-}
-
-.display::placeholder {
-  color: inherit;
-}
-
-/* Button Grid */
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, var(--button-size));
-  grid-template-rows: repeat(5, var(--button-size));
-  gap: 1px;
-}
-
-/* Button Styles */
-.buttons button {
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
-  font-size: var(--font-size-normal);
-  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  font-family: 'Roboto', sans-serif;
   cursor: pointer;
-  mix-blend-mode: multiply;
-  transition: all 0.2s ease;
 }
 
-.buttons button:hover {
-  background-color: var(--button-hover);
-  color: var(--primary-color);
+.nav-menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
 }
 
-.buttons button:active {
-  background-color: var(--button-active);
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Modifiers */
-.buttons .operator {
-  font-size: calc(var(--font-size-normal) + 12px);
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
 }
 
-.double {
-  grid-column: span 2;
+.nav-link:hover::after {
+  width: 100%;
+  left: 50%;
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 840px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
