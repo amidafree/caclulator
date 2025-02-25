@@ -1,66 +1,80 @@
+/* Variables */
+:root {
+  --primary-color: rgb(0, 180, 180);  
+  --button-hover: white;
+  --button-active: hsl(0, 0%, 80%);
+  --font-size-normal: 26px;
+  --font-size-large: 40px;
+  --button-size: 70px;
+}
+
+/* Base Styles */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Arial';
+  font-family: 'Arial', sans-serif;
 }
 
 body {
   height: 100vh;
-  background: linear-gradient(to bottom, rgb(133, 57, 255), rgb(255, 192, 111));
+  background: linear-gradient(to right bottom, rgb(99, 232, 255), rgb(255, 84, 232)); 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Display Section */
 .display {
-  width: 283px;
-  padding-top: 24px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  width: calc(var(--button-size) * 4 + 3px); /* 70px * 4 + gap */
+  padding: 24px 4px 0 0;
   border: none;
   margin-bottom: 1px;
-  mix-blend-mode: multiply;
-  background-color: rgb(0, 180, 180);
+  background-color: var(--primary-color);
   color: white;
-  font-size: 40px;
+  font-size: var(--font-size-large);
   font-weight: bold;
-  padding-right: 4px;
   text-align: right;
+  mix-blend-mode: multiply;
+  overflow-wrap: break-word;
 }
 
 .display::placeholder {
-  color: white;
+  color: inherit;
 }
 
+/* Button Grid */
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 70px);
-  grid-template-rows: repeat(5, 70px);
+  grid-template-columns: repeat(4, var(--button-size));
+  grid-template-rows: repeat(5, var(--button-size));
   gap: 1px;
 }
 
+/* Button Styles */
 .buttons button {
-  font-size: 26px;
-  font-weight: bold;
   border: none;
-  background-color: rgb(0, 180, 180);
+  background-color: var(--primary-color);
   color: white;
-  mix-blend-mode: multiply; 
+  font-size: var(--font-size-normal);
+  font-weight: bold;
   cursor: pointer;
+  mix-blend-mode: multiply;
+  transition: all 0.2s ease;
 }
 
 .buttons button:hover {
-  background-color: white;
-  color: rgb(0, 180, 180);
+  background-color: var(--button-hover);
+  color: var(--primary-color);
 }
 
 .buttons button:active {
-  background-color: hsl(0, 0%, 80%);
+  background-color: var(--button-active);
 }
 
+/* Modifiers */
 .buttons .operator {
-  font-size: 38px;
+  font-size: calc(var(--font-size-normal) + 12px);
 }
 
 .double {
