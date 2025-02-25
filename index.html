@@ -1,86 +1,35 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>calculator</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-    <header class="header" style="box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 0.5rem 0;">
-        <div class="header-content" style="height: 40px;">
-            <div class="logo">
-                <span class="logo-text"><a href="#home">Thank you for viewing!!</a></span>
-            </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="skills-container">
-            <div class="progress-skills-container">
-                <div class="skill-title">Learning Languages</div>
-                <div class="icons-container">
-                    <div class="skill-icon" style="transform: none !important; transition: none !important;">
-                        <img src="images/html-5.svg" alt="" class="html-icon">
-                    </div>
-                    <div class="skill-icon" style="transform: none !important; transition: none !important;">
-                        <img src="images/css.svg" alt="" class="css-icon">
-                    </div>
-                    <div class="skill-icon" style="transform: none !important; transition: none !important;">
-                        <img src="images/javascript.svg" alt="" class="javascript-icon">
-                    </div>
-                    <div class="skill-icon" style="transform: none !important; transition: none !important;">
-                        <img src="images/react.svg" alt="" class="react-icon">
-                    </div>
-                    
-                </div>
-                <div class="discription">
-                    <p class="discription-p">　比較的学習が容易なWEB系の言語を通じて、プログラミングの基礎を学んでおります。</p>
-                    <p>　<span style="font-family: 'Roboto', sans-serif;">amazon.com</span>等のクローンサイトや、本ポートフォリオサイトの作成を通じて実践的な技術を身に着けています。</p>
-                    <p>　現在は実務作業にも対応できることを目指し、<span style="font-family: 'Roboto', sans-serif;">React</span>を集中的に学習しております。</p>
-                    
-                </div>
-                
-            </div>
-            <div class="future-skills-container">
-                <div class="skill-title">Planned Learning Languages</div>
-                <div class="icons-container">
-                    <div class="skill-icon" style="transform: none !important; transition: none !important; ">
-                        <img src="images/tailwindcss-icon.svg" alt="" class="tailwindcss-icon">
-                    </div>
-                <div class="skill-icon" style="transform: none !important; transition: none !important;">
-                    <img src="images/typescript.svg" alt="" class="typescript-icon">
-                </div>
-                <div class="skill-icon" style="transform: none !important; transition: none !important;">
-                    <img src="images/next-js.svg" alt="" class="next-js-icon">
-                </div>
-                </div>
-                <div class="discription">
-                    <p>　今後のステップアップとして、開発スピード向上等に不可欠な<span style="font-family: 'Roboto', sans-serif;">Tailwind CSS</span>、<span style="font-family: 'Roboto', sans-serif;">WEB</span>開発で現在主流の言語である<span style="font-family: 'Roboto', sans-serif;">TypeScript</span>の学習を予定しています。</p>
-                    
-                    <p>　また、バックエンドを含めた開発を可能にするため、<span style="font-family: 'Roboto', sans-serif;">Next.js</span>の習得を2025年の最終的な目標としています。</p>  
-                </div>
-                   
-            </div>  
-            
-        </div>
-        
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Portfolio. All rights reserved.</p>
-    </footer>
-</body>
-</html> 
+  </head>
+  <body>
+    <div class="calculator"> 
+      <div class="display">0</div>
+      <div class="buttons">
+        <button class="double" data-ac>AC</button>
+        <button data-del>DEL</button>
+        <button class="operator" data-operator>÷</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button class="operator multiply" data-operator>×</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button class="operator" data-operator>+</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button class="operator" data-operator>-</button>
+        <button data-number>0</button>
+        <button data-number>.</button>
+        <button class="operator double" data-equal>=</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
